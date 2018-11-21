@@ -5,11 +5,25 @@ import './Restaurant.css';
 
 class Restaurant extends Component {
   render () {
-    const { name } = this.props;
+    const { name, user, votes, handleSelect, handleDeselect } = this.props;
+    const userHasSelected = votes && Object.keys(votes).includes(user.uid);
 
     return (
       <article className="Restaurant">
         <h3>{ name }</h3>
+        <ul>
+          { votes && map(votes, (vote, key) => <li key={key}>{ vote }</li>)}
+        </ul>
+        
+        {
+          userHasSelected
+            ? <button className="destructive" onClick={handleDeselect}>
+                Never
+              </button>
+            : <button onClick={handleSelect}>
+                I'd go there
+              </button>
+        }
       </article>
     );
   }

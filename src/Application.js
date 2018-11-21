@@ -41,7 +41,7 @@ const { currentUser, restaurants } = this.state;
           <div>
           <NewRestaurant />
           {/* { map( restaurants, ( restaurant, key ) => <p key={ key }>{ restaurant.name }</p> )} */}
-          <Restaurants restaurants = { restaurants }/>
+          <Restaurants restaurants = { restaurants } user={currentUser}/>
           <CurrentUser user = { currentUser } />
           </div>}
         </div>
