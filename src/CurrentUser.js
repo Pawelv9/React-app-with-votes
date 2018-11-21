@@ -5,6 +5,18 @@ import './CurrentUser.css';
 const CurrentUser = ({ user }) => {
   return (
     <div className="CurrentUser">
+    <img 
+      className="CurrentUser--photo"
+      src={ user.photoURL }
+      alt={ user.displayName }
+      />   
+    <div className="currentUser--identification">
+      <h3>{user.displayName}</h3>
+      <p>{user.email}</p>
+      <button>
+        Sign Out
+      </button>
+    </div>
     </div>
   );
 };
