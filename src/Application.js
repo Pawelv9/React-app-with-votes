@@ -25,7 +25,7 @@ componentDidMount() {
       // console.log(snaphot.val());
       this.setState({ restaurants: snapshot.val() });
     });
-  })
+  });
 }
 
   render() {
@@ -40,8 +40,9 @@ const { currentUser, restaurants } = this.state;
           {currentUser && 
           <div>
           <NewRestaurant />
-          { map( restaurants, ( restaurant, key ) => <p key={key}>{ restaurant.name }</p> )}
-          <CurrentUser user={currentUser} />
+          {/* { map( restaurants, ( restaurant, key ) => <p key={ key }>{ restaurant.name }</p> )} */}
+          <Restaurants restaurants = { restaurants }/>
+          <CurrentUser user = { currentUser } />
           </div>}
         </div>
       </div>;
